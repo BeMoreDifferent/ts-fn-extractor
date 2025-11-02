@@ -2,19 +2,41 @@
 
 A CLI tool that scans TypeScript projects, extracts function information, and prints compact reports.
 
+## Installation
+
+```bash
+# Using npm
+npm install -g ts-fn-extractor
+
+# Using npx (no installation required)
+npx ts-fn-extractor
+```
+
 ## Quick Start
 
 ```bash
-# Install dependencies
+# Scan all functions in your TypeScript project
+ts-fn-extractor
+
+# Find a specific function
+ts-fn-extractor --fn myFunction
+
+# Analyze a specific file
+ts-fn-extractor --file src/utils.ts
+```
+
+## Development Setup
+
+```bash
+# Clone and install dependencies
+git clone https://github.com/BeMoreDifferent/ts-fn-extractor.git
+cd ts-fn-extractor
 pnpm install
 
 # Build the project
 pnpm build
 
-# Run on your TypeScript project
-npx ts-fn-extractor
-
-# Or run tests
+# Run tests
 pnpm test
 ```
 
@@ -73,21 +95,31 @@ npx ts-fn-extractor --file src/service.ts --with-sub --lint=all
 
 ## Output Format
 
-For each function, the tool outputs:
+Each function is reported with structured information:
 
 ```text
-Function: functionName
-File: relative/path/to/file.ts
-Signature: functionName(param: Type): ReturnType
-JSDoc:
-  /** JSDoc comments if present */
+Function: runExtractor
+File: src/index.ts
+Signature: (opts: CliOptions): Promise<string>
+JSDoc: -
+Interfaces: -
+Types: -
+Subfunctions: -
+Lint: none
+```
+
+When running with `--with-sub` on a function with nested functions:
+
+```text
+Function: analyzeProject
+File: src/analyzer.ts
+Signature: (opts: CliOptions): FunctionInfo[]
 Interfaces:
-- InterfaceName: interface definition...
-Types:
-- TypeName: type definition...
+- CollectCtx: interface CollectCtx { checker: ts.TypeChecker; ... }
+Types: -
 Subfunctions:
-- subFunctionName (relative/path/to/file.ts)
-Lint: mode
+- collectFunctions (src/analyzer.ts)
+Lint: none
 ```
 
 ## Development
