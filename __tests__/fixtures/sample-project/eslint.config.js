@@ -1,0 +1,9 @@
+export default [
+  {
+    files: ["**/*.ts"],
+    rules: {
+      "no-unused-vars": "warn",
+      "no-console": "error",
+    },
+  },
+];
