@@ -1,7 +1,7 @@
 {
   "name": "ts-fn-extractor",
-  "version": "0.1.0",
-  "description": "CLI tool that scans TypeScript projects, extracts function information, and prints compact reports",
+  "version": "0.2.0",
+  "description": "Token-optimized function extraction for AI code reviews. Extract TypeScript functions with 95% token savings for Claude Code, ChatGPT, and other AI assistants.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,16 +21,25 @@
     "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
   },
   "keywords": [
+    "ai",
+    "claude-code",
+    "ai-assistant",
+    "code-review",
+    "token-optimization",
+    "llm",
+    "chatgpt",
+    "copilot",
+    "cursor",
     "typescript",
     "cli",
     "analyzer",
     "ast",
     "functions",
     "extractor",
-    "jsdoc",
     "code-analysis",
     "typescript-compiler-api",
-    "eslint"
+    "ai-tools",
+    "developer-tools"
   ],
   "author": "BeMoreDifferent",
   "license": "ISC",
