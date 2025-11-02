@@ -1,20 +1,50 @@
 {
   "name": "ts-fn-extractor",
   "version": "0.1.0",
-  "description": "CLI TS tool that scans a TS project, finds functions, and prints a compact text report",
+  "description": "CLI tool that scans TypeScript projects, extracts function information, and prints compact reports",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
     "ts-fn-extractor": "dist/cli.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "pnpm test && pnpm build",
     "start": "node dist/cli.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
   },
-  "keywords": ["typescript", "analyzer", "cli", "functions"],
-  "author": "",
+  "keywords": [
+    "typescript",
+    "cli",
+    "analyzer",
+    "ast",
+    "functions",
+    "extractor",
+    "jsdoc",
+    "code-analysis",
+    "typescript-compiler-api",
+    "eslint"
+  ],
+  "author": "BeMoreDifferent",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeMoreDifferent/ts-fn-extractor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BeMoreDifferent/ts-fn-extractor/issues"
+  },
+  "homepage": "https://github.com/BeMoreDifferent/ts-fn-extractor#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "packageManager": "pnpm@10.14.0",
   "dependencies": {
     "eslint": "^9.39.0",

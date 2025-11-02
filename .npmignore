@@ -1,0 +1,30 @@
+# Source files
+src/
+__tests__/
+*.test.ts
+
+# Config files
+tsconfig.json
+jest.config.js
+
+# Development
+node_modules/
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+pnpm-lock.yaml
+coverage/
